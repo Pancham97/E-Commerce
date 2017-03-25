@@ -1,0 +1,39 @@
+#crossfade {
+    position: relative;
+    height: 350px;
+    width: 350px;
+    margin-right: 250px;
+    padding: 100px;
+}
+
+#crossfade img {
+    position: absolute;
+    left: 0;
+    -webkit-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+}
+
+@keyframes crossFadeInOut {
+    0% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#crossfade img.top {
+    animation-name: crossFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+}
