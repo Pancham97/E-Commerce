@@ -22,6 +22,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     extract($row);
                     echo "Welcome, " . $complete_name . " to our online services!<br>";
+                    $_SESSION['complete_name'] = $complete_name;
                     $_SESSION['emailaddress'] = $_POST['emailaddress'];
                     $_SESSION['password'] = $_POST['password'];
                     echo "<script language=\"JavaScript\">updateUser('$complete_name');</script>";

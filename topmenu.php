@@ -2,8 +2,19 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>Online Store</title>
-    <link rel="stylesheet" href="css/style.css">
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="css/universal.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!--      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    
     <script language="JavaScript" type="text/javascript">
         function makeRequestObject() {
             var xmlhttp = false;
@@ -36,41 +47,71 @@
     </script>
 </head>
 
-<body>
-    <table width="100%" cellspacing="0" cellpadding="2">
-        <col style="width: 30%">
-        <col style="width: 40%">
-        <col style="width: 20%">
+<!--<body>-->
+<!--
+    <table width="100%" cellspacing="0">
         <tr>
-            <td style="background-color: cyan; color: blue;"></td>
-            <td style="background-color: cyan; color: blue;"></td>
-            <td style="background-color: cyan; color: blue;">
-            <?php
+-->
+
+<!-- Top navigation bar STARTS -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.php">Online Retail Store</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li> 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Purchase<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Products</a></li>
+                    </ul>
+                </li>
+                
+                
+                <li><a href="#">Page 2</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" method="post" action="searchitems.php">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="tosearch">
+                </div>
+                <button type="submit" class="btn btn-default search-button">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <?php
                 if(session_status() == PHP_SESSION_NONE) {
                     session_start();
                 }
                 if(isset($_SESSION['emailaddress'])) {
-                    echo "Welcome " . $_SESSION['emailaddress'] . "&nbsp;&nbsp;&nbsp;";
-                    echo "<a href=\"logout.php\">Logout</a></td></tr>";
+                    echo "<li><a href='profile.php'>Welcome " . $_SESSION['emailaddress'] . "</a></li>";
+                    echo "<li><a href=\"logout.php\">Logout</a></li>";
                 } else {
-                    echo "<a href=\"signin.php\">Login</a>&nbsp;&nbsp;&nbsp;";
-                    echo "<a href=\"signup.php\">Sign up</a></td></tr>";
+                    echo "<li><a href=\"signin.php\">Login</a></li>";
+                    echo "<li><a href=\"signup.php\">Sign up</a></li>";
                 }
                 
             ?>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Top navbar ENDS -->
+    <!-- Navigation bar ENDS -->
+            
+<!--
                 <tr>
-                    <td style="font-size: 35px; color: blue; background-color: cyan;">
+                    <td style="font-size: 35px; color: blue;">
                         <b>Online Store</b>
                     </td>
                     
-                    <td bgcolor="cyan">
+                    <td>
                         <form method="post" action="searchitems.php">
                             <input size="50" type="text" name="tosearch">
                             <input type="submit" name="submit" value="Search">
                         </form>
                     </td>
                     
-                    <td bgcolor="cyan">
+                    <td>
                         <a href="cart.php"><img style="max-width: 40px; max-height: 40px; width: auto; height: auto;" src="images/corner-logo.png"><span id="cartcountinfo"></span></a>
                     </td>
                 </tr>
@@ -103,3 +144,8 @@
         </nav>
     </div>
 <p></p>
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>

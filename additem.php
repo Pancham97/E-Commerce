@@ -8,10 +8,12 @@
         <form action="additem1.php" method="post">
             <table border="0" cellspacing="1" cellpadding="3">
                 <tr><td colspan="2" align="center">Enter your information</td></tr>
+<!--
                 <tr>
                     <td>Item code: </td>
                     <td><input size="20" type="text" name="item_code"></td>
                 </tr>
+-->
                 <tr>
                     <td>item name: </td>
                     <td><input size="20" type="text" name="item_name"></td>
