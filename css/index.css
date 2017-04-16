@@ -1,9 +1,10 @@
-body {
-    padding-top: 80px;
+#carousel {
+    padding: 10px 0 10px 0;
 }
 
 #carousel {
     padding: 10px 0 10px 0;
+
 }
 
 .carousel .carousel-control {
@@ -11,6 +12,7 @@ body {
     transition: all 0.1s ease 0s;
     background: auto;
     color: #fff;
+    width: 50px;
 }
 
 #carousel:hover .carousel-control {

@@ -12,11 +12,13 @@
     }
     $query .= implode(" OR ", $query_fields);
     $results = mysqli_query($connection, $query) or die(mysql_error());
-    echo "<table border=\"0\">";
+//    echo '<div class="row">';
+//    echo '<div class="container">';
+    echo "<table align=\"center\" border=\"0\">";
     $x = 1;
     echo "<tr>";
     while($row = mysqli_fetch_assoc($results)) {
-        if($x <= 6) {
+        if($x <= 5) {
             $x = $x + 1;
             extract($row);
             echo "<td style=\"padding-right: 15px;\">";
@@ -32,4 +34,5 @@
         }
     }
     echo "</table>";
+//    echo '</div></div>';
 ?>

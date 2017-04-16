@@ -8,13 +8,11 @@
     <title>Online Store</title>
     
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="css/universal.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
 
     <!--      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-    
     <script language="JavaScript" type="text/javascript">
         function makeRequestObject() {
             var xmlhttp = false;
@@ -67,8 +65,6 @@
                         <li><a href="#">Products</a></li>
                     </ul>
                 </li>
-                
-                
                 <li><a href="#">Page 2</a></li>
             </ul>
             <form class="navbar-form navbar-left" method="post" action="searchitems.php">
@@ -83,13 +79,14 @@
                     session_start();
                 }
                 if(isset($_SESSION['emailaddress'])) {
+                    echo '<li><a href="cart.php"><img style="max-width: 30px;" src="images/cart.png"><span id="cartcountinfo"></span></a></li>';
                     echo "<li><a href='profile.php'>Welcome " . $_SESSION['emailaddress'] . "</a></li>";
                     echo "<li><a href=\"logout.php\">Logout</a></li>";
                 } else {
-                    echo "<li><a href=\"signin.php\">Login</a></li>";
-                    echo "<li><a href=\"signup.php\">Sign up</a></li>";
+                    echo '<li><a href="cart.php"><img style="max-width: 30px;" src="images/cart.png"><span id="cartcountinfo"></span></a></li>';
+                    echo "<li><a href='profile.php'>Welcome " . $_SESSION['emailaddress'] . "</a></li>";
+                    echo "<li><a href=\"logout.php\">Logout</a></li>";
                 }
-                
             ?>
             </ul>
         </div>

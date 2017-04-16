@@ -6,11 +6,12 @@
         <?php 
             $connection = mysqli_connect("localhost", "root", "", "shopping") or die("Check your sql connection!");
             $query = "select item_code, item_name, description, imagename, price from products";
-            $results = mysqli_query($connection, $query) or die(mysql_error());         echo "<table border = \"0\">";
+            $results = mysqli_query($connection, $query) or die(mysql_error());         
+            echo "<table align=\"center\" border = \"0\">";
             $x = 1;
             echo "<tr>";
             while($row = mysqli_fetch_assoc($results)) {
-                if($x <= 6) {
+                if($x < 5) {
                     $x = $x + 1;
                     extract($row);
                     echo "<td style = \"padding-right:15px;\">";
