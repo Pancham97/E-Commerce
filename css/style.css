@@ -1,6 +1,15 @@
 body row {
     margin: 0;
 }
+
+.navbar-brand img {
+    width: 24px;
+}
+
+.navbar-brand img, .navbar-brand span {
+    display: inline-block;
+}
+
 img {
     max-width: 180px;
     max-height: 200px;
@@ -21,8 +30,26 @@ ol, ul {
 }
 
 .navbar-form .form-group .form-control {
+    margin-left: 200px;
     width: 400px;
     margin-right: 0;
+}
+
+.form {
+    border-radius: 4px;
+    background-color: cornsilk;
+    padding: 30px;
+}
+
+.form .btn-block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.signup {
+    margin: 0;
+    padding: 0;
+    background-color: cornsilk;
 }
 
 .log ul {
@@ -33,6 +60,32 @@ ol, ul {
     right: 0;
     display: inline;
 }
+
+.footer {
+    
+    margin: 40px 0 0 0;
+    padding: 20px 0 30px 0;
+    text-align: center;
+    background: #34495e;
+    color: #fff;
+}
+
+.footer .row {
+    margin: 0;
+}
+.contact-us a {
+    color: #fff;
+    transition: 0.2s;
+    -o-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+}
+
+.contact-us a:hover {
+    color: bisque;
+    text-decoration: none;
+}
+
 
 /*
 nav {

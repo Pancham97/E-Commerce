@@ -6,58 +6,86 @@
     </head>
     
     <body>
-        <form action="addcustomer.php" method="post" onsubmit="return validate(this);">
-            <table border="0" cellspacing="1" cellpadding="3">
-                <tr><td colspan="2" align="center">Enter your information</td></tr>
-                <tr>
-                    <td>Email address: </td>
-                    <td><input size="20" type="text" name="emailaddress"><span id="emailmsg"></span></td>
-                </tr>
-                <tr>
-                    <td>Password: </td>
-                    <td><input size="20" type="password" name="password"><span id="passwdmsg"></span></td>
-                </tr>
-                <tr>
-                    <td>Retype password: </td>
-                    <td><input size="20" type="password" name="repassword"><span id="repasswdmsg"></span></td>
-                </tr>
-                <tr>
-                    <td>Complete name:</td>
-                    <td><input size="50" type="text" name="complete_name"><span id="usermsg"></span></td>
-                </tr>
-                <tr>
-                    <td>Address: </td>
-                    <td><input size="80" type="text" name="address1"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input size="80" type="text" name="address2"></td>
-                </tr>
-                <tr>
-                    <td>City: </td>
-                    <td><input size="30" type="text" name="city"></td>
-                </tr>
-                <tr>
-                    <td>State: </td>
-                    <td><input size="30" type="text" name="state"></td>
-                </tr>
-                <tr>
-                    <td>Country: </td>
-                    <td><input size="30" type="text" name="country"></td>
-                </tr>
-                <tr>
-                    <td>Zip code: </td>
-                    <td><input size="20" type="text" name="zipcode"></td>
-                </tr>
-                <tr>
-                    <td>Phone number: </td>
-                    <td><input size="30" type="text" name="phone_no"></td>
-                </tr>
-                <tr>
-                    <td><input name="submit" type="submit" value="Submit"></td>
-                    <td><input type="reset" value="Cancel"></td>
-                </tr>
-            </table>
-        </form>
+        <? include 'topmenu.php'; ?>
+        <div class="row signup">
+            <div class="container">
+                <div class="col-md-4"></div>
+                    <div class="col-md-4 form">
+                        <h2>Sign Up to Online RS!</h2><br>
+                        <form action="addcustomer.php" method="post" onsubmit="return validate(this);">
+                            <label for="emailaddress" class="sr-only">Email address</label>
+                            <input class="form-control" placeholder="Email address" type="text" name="emailaddress"><span id="emailmsg"></span>
+                            
+                            <br>
+            
+                            <label for="password" class="sr-only">Password</label>
+                            <input class="form-control" placeholder="Password" type="password" name="password"><span id="passwdmsg"></span>
+                            
+                            <br>
+                            
+                            <label for="repassword" class="sr-only">Re-enter password</label>
+                            <input class="form-control" placeholder="Retype Password" type="password" name="repassword"><span id="repasswdmsg"></span>
+                            
+                            <br>
+                            
+                            <label for="complete_name" class="sr-only">Name</label>
+                            <input class="form-control" placeholder="Name" type="text" name="complete_name"><span id="usermsg"></span>
+                            
+                            <br>
+                            
+                            <label for="address1" class="sr-only">Address</label>
+                            <input class="form-control" placeholder="Address 1" type="text" name="address1">
+                            
+                            <br>
+                            
+                            <label for="address2" class="sr-only">Address</label>
+                            <input class="form-control" placeholder="Address 2" type="text" name="address2">
+                            
+                            <br>
+                            
+                            <label for="city" class="sr-only">City</label>
+                            <input class="form-control" placeholder="City" type="text" name="city">
+                            
+                            <br>
+                            
+                            <label for="state" class="sr-only">State</label>
+                            <input class="form-control" placeholder="State" type="text" name="state">
+                            
+                            <br>
+                            
+                            <label for="country" class="sr-only">Country</label>
+                            <input class="form-control" placeholder="Country" type="text" name="country">
+                            
+                            <br>
+                            
+                            <label for="zipcode" class="sr-only">Zipcode</label>
+                            <input class="form-control" placeholder="Zipcode" type="text" name="zipcode">
+                            
+                            <br>
+                            
+                            <label for="phone_no" class="sr-only">Phone Number</label>
+                            <input class="form-control" placeholder="Phone Number" type="text" name="phone_no">
+                            
+                            <br>
+                            
+        
+<!--
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="remember-me"> Remember me
+                                </label>
+                            </div>
+-->
+        
+                            <button class="btn btn-primary" type="submit">Sign Up</button>
+                            <button class="btn btn-primary" type="reset">Reset</button>
+                                
+                        </form>
+                    </div>
+                
+            </div>
+        </div>
+              
+        <? include 'footer.php'; ?>
     </body>
 </html>

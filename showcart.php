@@ -11,44 +11,44 @@
     $query = "select * from cart where cart_sess = '$sessid'";
     $results = mysqli_query($connection, $query) or die(mysql_error());
     if(mysqli_num_rows($results) == 0) {
-        echo "<div style=\"width:200px; margin:auto;\">Your cart is empty!</div>";
+        echo "<div style=\"margin:auto;\"><center><h2>Your cart is empty!</h2><br><br><h1><a href=\"index.php\">Shop Now!</a></h1></center></div>";
     } else {
         ?>
-        <table border="1" align="center" cellpadding="5">
-            <tr>
-                <td>Item code</td>
-                <td>Quantity</td>
-                <td>Item name</td>
-                <td>Price</td>
-                <td>Total Price</td>
+        <table border="1" align="center" style="padding: 20px;">
+            <tr style="padding: 20px;">
+                <td style="padding: 20px;">Item code</td>
+                <td style="padding: 20px;">Quantity</td>
+                <td style="padding: 20px;">Item name</td>
+                <td style="padding: 20px;">Price</td>
+                <td style="padding: 20px;">Total Price</td>
                 <?php 
                     while($row = mysqli_fetch_assoc($results)) {
                         extract($row);
-                        echo "<tr><td>";
+                        echo "<tr><td style=\"padding: 20px;\">";
                         echo $cart_itemcode;
                         echo "</td>";
-                        echo "<td><form method=\"post\" action=\"cart.php?action=change&icode=$cart_itemcode\"><input type=\"text\" name=\"modified_quantity\" size=\"2\" value=\"$cart_quantity\">";
-                        echo "</td><td>";
+                        echo "<td style=\"padding: 20px;\"><form method=\"post\" action=\"cart.php?action=change&icode=$cart_itemcode\"><input type=\"text\" name=\"modified_quantity\" size=\"2\" value=\"$cart_quantity\">";
+                        echo "</td><td style=\"padding: 20px;\">";
                         echo $cart_itemname;
-                        echo "</td><td>";
+                        echo "</td><td style=\"padding: 20px;\">";
                         echo $cart_price;
-                        echo "</td><td>";
+                        echo "</td><td style=\"padding: 20px; text-align: center;\">";
                         $totalquantity = $totalquantity + $cart_quantity;
                         $totalprice = number_format($cart_price * $cart_quantity, 2);
                         $totalamount = $totalamount + ($cart_price * $cart_quantity);
                         echo $totalprice;
-                        echo "</td><td>";
-                        echo "<input type=\"submit\" name=\"Submit\" value=\"Change quantity\"></form></td>";
-                        echo "<td>";
+//                        echo "</td><td style=\"padding: 20px;\">";
+//                        echo "<input type=\"submit\" name=\"Submit\" value=\"Change quantity\"></form></td>";
+                        echo "<td style=\"padding: 20px;\">";
                         echo "<form method=\"post\" action=\"cart.php?action=delete&icode=$cart_itemcode\">";
                         echo "<input type=\"submit\" name=\"Submit\" value=\"Delete item\"></form></td></tr></tr>";
                     }
-                    echo "<tr><td>Total</td><td>$totalquantity</td><td></td><td></td><td>";
+                    echo "<tr><td style=\"padding: 20px;\"><b>Total</b></td><td style=\"padding: 20px;\">$totalquantity</td><td style=\"padding: 20px;\"></td><td></td><td style=\"padding: 20px;\">";
                     $totalamount = number_format($totalamount, 2);
-                    echo $totalamount;
+                    echo "<b>" . $totalamount . "</b>";
                     echo "</td></tr>";
                     echo "</table><br>";
-                    echo "<div style=\"width:400px; margin:auto;\">You currently have " . $totalquantity . " products(s) selected in your cart</div>";
+                    echo "<div style=\"margin:auto;\"><center>You currently have " . $totalquantity . " product(s) selected in your cart</center></div>";
                 ?>
                 <table border="0" style="margin: auto;">
                     <tr>
@@ -65,7 +65,7 @@
                         </td>
                     </tr>
                 </table>
+                
                 <?php
     }
 ?>
-            </body></html>

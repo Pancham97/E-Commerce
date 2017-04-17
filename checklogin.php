@@ -9,7 +9,7 @@
     $_SESSION['cartamount'] = $cartamount;
     if(isset($_SESSION['emailaddress'])) {
         $email_address = $_SESSION['emailaddress'];
-        echo "Welcome " . $email_address . ". <br>";
+        echo "Welcome " . $_SESSION['complete_name'] . "! <br>";
     }
     if(isset($_SESSION['password'])) {
         $password = $_SESSION['password'];
@@ -19,7 +19,7 @@
         $query = "select * from cart where cart_sess = '$sess'";
         $result = mysqli_query($connection, $query) or die(mysql_error());
         if(mysqli_num_rows($result) >= 1) {
-            echo "If you\'ve finished shopping, ";
+            echo "If you've finished shopping, ";
             echo "<a href=\"shipping_info.php\">Click here</a> to supply shipping information";
             echo "Or you can keep shopping!";
         } else {

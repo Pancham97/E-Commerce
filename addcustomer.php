@@ -1,5 +1,7 @@
 <?php 
 
+include 'topmenu.php';
+
 $connection = mysqli_connect("localhost", "root", "", "shopping") or die("Please, check the server connection!");
 
 $email_address = $_POST['emailaddress'];
@@ -20,10 +22,19 @@ $result = mysqli_query($connection, $insert_query) or die(mysql_error());
 
 if($result) {
     ?>
-    <p>Dear, <?php echo $completename; ?>, your account is successfully created!</p>
+    <div class="row">
+        <div class="container">
+            <h4>Dear, <?php echo $completename; ?>, your account is successfully created!</h4>
+            <h4>Click <a href="index.php">here</a> to start shopping!</h4>
+        </div>
+    </div>
+    
 <?php 
+    header ("Location: index.php");
 } else {
     echo "Some error occurred while creating your account! Please try again!";
 }
+
+include 'footer.php';
 
 ?>

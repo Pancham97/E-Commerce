@@ -55,17 +55,10 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.php">Online Retail Store</a>
+                <a class="navbar-brand" href="index.php"><img src="images/cart.png">&nbsp;<span>Online Retail Store</span></a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li> 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Purchase<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Products</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Page 2</a></li>
+
             </ul>
             <form class="navbar-form navbar-left" method="post" action="searchitems.php">
                 <div class="form-group">
@@ -79,13 +72,13 @@
                     session_start();
                 }
                 if(isset($_SESSION['emailaddress'])) {
-                    echo '<li><a href="cart.php"><img style="max-width: 30px;" src="images/cart.png"><span id="cartcountinfo"></span></a></li>';
-                    echo "<li><a href='profile.php'>Welcome " . $_SESSION['emailaddress'] . "</a></li>";
+                    echo '<li><a href="cart.php"><img style="max-width: 20px;" src="images/cart.png"><span id="cartcountinfo"></span></a></li>';
+                    echo "<li><a href='profile.php'>Welcome " . $_SESSION['complete_name'] . "</a></li>";
                     echo "<li><a href=\"logout.php\">Logout</a></li>";
                 } else {
-                    echo '<li><a href="cart.php"><img style="max-width: 30px;" src="images/cart.png"><span id="cartcountinfo"></span></a></li>';
-                    echo "<li><a href='profile.php'>Welcome " . $_SESSION['emailaddress'] . "</a></li>";
-                    echo "<li><a href=\"logout.php\">Logout</a></li>";
+                    echo '<li><a href="cart.php"><img style="max-width: 20px;" src="images/cart.png"><span id="cartcountinfo"></span></a></li>';
+                    echo "<li><a href='signin.php'>Login</a></li>";
+                    echo "<li><a href=\"signup.php\">Sign Up</a></li>";
                 }
             ?>
             </ul>

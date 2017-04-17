@@ -53,7 +53,7 @@
             case "change":
                 if($modified_quantity == 0) {
                     $query = "delete from cart where cart_sess = '$sess_id' and cart_itemcode like '$itemcode'";
-                    $message = "<div style \"width:200px; margin:auto;\">Item deleted!</div>";
+                    $message = "<center><div style \"text-align: center; margin:auto;\">Item deleted!</div></center>";
                 } else {
                     if(modified_quantity < 0) {
                         echo "Invalid quantity entered!";
